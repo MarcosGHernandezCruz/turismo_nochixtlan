@@ -1,0 +1,59 @@
+{
+  "lugares": [
+    {
+      "id": "yanhuitlan",
+      "nombre": "Ex-convento de Santo Domingo Yanhuitlán",
+      "categoria": "Ruta de los Dominicos",
+      "descripcion": "Obra maestra de la arquitectura novohispana del siglo XVI, erigida sobre un antiguo centro ceremonial mixteco.",
+      "historia": "Construido a partir de 1541 por la orden dominica. Su majestuosidad refleja el poder económico que alcanzó la región gracias al comercio de la grana cochinilla y la seda. Fue un centro de evangelización crucial en la Mixteca.",
+      "atractivos": ["Comedores tradicionales cercanos", "Retablo mayor de estilo barroco", "Facistol tallado y claustro monumental", "Museo Regional del INAH en la comunidad de Yanhuitlán"],
+      "horarios": "Martes a Domingo de 9:00 a 17:00 hrs.",
+      "x": 30, "y": 45,
+      "imagen": "https://i.postimg.cc/3xdFx0Rw/Yanhui.jpg"
+    },
+    {
+      "id": "apoala",
+      "nombre": "Santiago Apoala",
+      "categoria": "Naturaleza y Leyenda",
+      "descripcion": "Cuna mítica de la cultura mixteca. Sus cascadas, cañones y el 'Árbol del Linaje' lo convierten en un destino de ecoturismo inigualable.",
+      "historia": "Según los códices prehispánicos (como el Códice Vindobonensis), Apoala es el lugar donde nacieron los primeros gobernantes mixtecos a partir de los árboles que crecían en las riberas de su río.",
+      "atractivos": ["Cascada Cola de Serpiente (más de 30m de altura)", "Cueva del Diablo con estalactitas", "Peñas gemelas y senderismo", "Cabañas ecológicas comunitarias",  "Comedores tradicionales"],
+      "horarios": "Acceso libre de Lunes a Domingo (se sugiere guía local).",
+      "x": 65, "y": 16,
+      "imagen": "https://i.postimg.cc/3xdFx0R7/Apoala.jpg"
+    },
+    {
+      "id": "etlatongo",
+      "nombre": "San Mateo Etlatongo",
+      "categoria": "Sitio Histórico",
+      "descripcion": "Reconocido por su ex-hacienda y su profunda importancia arqueológica e histórica en el valle de Nochixtlán.",
+      "historia": "El valle de Etlatongo fue uno de los primeros asentamientos complejos de la región (Período Formativo). Durante el Porfiriato, su hacienda fue un epicentro agrícola y ganadero de suma importancia para la economía de Oaxaca.",
+      "atractivos": ["Ruinas de la Ex-hacienda porfiriana", "Vestigios de acueductos coloniales", "Parroquia de Santiago Apóstol", "Miradores naturales del valle"],
+      "horarios": "Sin información exacta, generalmente horario diurno.",
+      "x": 45, "y": 75,
+      "imagen": "https://i.postimg.cc/13fr3Vt9/Etlatongo.jpg"
+    },
+    {
+      "id": "huauchilla",
+      "nombre": "Santiago Huauchilla",
+      "categoria": "Aventura Natural",
+      "descripcion": "Paraíso de biodiversidad ideal para el senderismo y la fotografía de naturaleza.",
+      "historia": "Sus bosques han sido históricamente protegidos por la comunidad por su valor en medicina tradicional y recursos naturales.",
+      "atractivos": ["Cascadas de agua cristalina", "Observación de aves", "Camping", "Senderos interpretativos", "Comedores tradicionales (criaderos de mojarras cercanos)"],
+      "horarios": "Acceso diurno (7:00 a 18:00 hrs).",
+      "x": 85, "y": 55,
+      "imagen": "https://i.postimg.cc/8zjmzf5p/Huauchilla.jpg"
+    },
+    {
+      "id": "mirador",
+      "nombre": "Mirador de Asunción Nochixtlán",
+      "categoria": "Panorámico",
+      "descripcion": "Punto de observación privilegiado que ofrece vistas espectaculares del extenso valle de Nochixtlán, la ciudad y la geografía de la Mixteca Alta.",
+      "historia": "Los valles y lomeríos que se observan desde este punto han sido el corazón agrícola de la región desde la época prehispánica, siendo mudos testigos del antiguo sistema de terrazas (lamabordos) y el posterior auge comercial de la grana cochinilla.",
+      "atractivos": ["Vista panorámica del valle, la ciudad y montañas circundantes", "Ideal para fotografía de amaneceres y atardeceres", "Observación de la orografía y paisajes", "Punto de descanso y contemplación"],
+      "horarios": "Acceso libre 24 hrs. Se recomienda visitar al amanecer o atardecer.",
+      "x": 52, "y": 60,
+      "imagen": "https://i.postimg.cc/YChzCL9C/Mirador-2.jpg"
+    }
+  ]
+}

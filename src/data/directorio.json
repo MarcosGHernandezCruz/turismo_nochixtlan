@@ -1,0 +1,39 @@
+{
+  "lugares": [
+    {
+      "id": "yanhuitlan",
+      "nombre": "Ex-convento de Santo Domingo Yanhuitlán",
+      "categoria": "Ruta de los Dominicos",
+      "descripcion": "Obra maestra de la arquitectura novohispana del siglo XVI, conocida por su impresionante artesonado y retablos barrocos.",
+      "x": 30, "y": 45
+    },
+    {
+      "id": "apoala",
+      "nombre": "Santiago Apoala",
+      "categoria": "Naturaleza y Leyenda",
+      "descripcion": "Cuna mítica de la cultura mixteca. Sus cascadas, cañones y el 'Árbol del Linaje' lo convierten en un destino de ecoturismo inigualable.",
+      "x": 65, "y": 16
+    },
+    {
+      "id": "etlatongo",
+      "nombre": "San Mateo Etlatongo",
+      "categoria": "Sitio Histórico",
+      "descripcion": "Reconocido por su ex-hacienda y su importancia histórica en el valle de Nochixtlán.",
+      "x": 45, "y": 75
+    },
+    {
+      "id": "huauchilla",
+      "nombre": "Santiago Huauchilla",
+      "categoria": "Aventura Natural",
+      "descripcion": "Sistema de cascadas y senderos naturales ideales para el senderismo y la fotografía de paisaje.",
+      "x": 45, "y": 75
+    },
+    {
+      "id": "mirador",
+      "nombre": "Mirador de Asunción Nochixtlán",
+      "categoria": "Panorámico",
+      "descripcion": "Punto de observación con vistas panorámicas del valle de Nochixtlán.",
+      "x":52, "y": 60
+    }
+  ]
+}

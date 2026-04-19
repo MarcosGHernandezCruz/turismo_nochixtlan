@@ -1,0 +1,18 @@
+{
+  "negocios": [
+    {
+      "id": "mercado-municipal",
+      "nombre": "Mercado Municipal de Nochixtlán",
+      "categoria": "Gastronomía",
+      "descripcion": "Punto de encuentro para degustar la barbacoa de borrego y adquirir productos de la región.",
+      "direccion": "Calle Porfirio Díaz, Centro."
+    },
+    {
+      "id": "hotel-central",
+      "nombre": "Hotel Nochixtlán",
+      "categoria": "Hospedaje",
+      "descripcion": "Servicio de alojamiento profesional en el centro del municipio.",
+      "direccion": "Avenida Libertad."
+    }
+  ]
+}

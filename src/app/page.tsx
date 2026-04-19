@@ -1,65 +1,55 @@
-import Image from "next/image";
+import Hero from "@/components/landing/Hero";
+import InteractiveMap from "@/components/landing/InteractiveMap";
+import TesorosRegionales from "@/components/landing/TesorosRegionales";
+import dataTurismo from "@/data/turismo.json";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  // Mapeo exhaustivo para garantizar que todos los puntos aparezcan en el mapa
+  const mapLocations = dataTurismo.lugares.map(l => ({
+    id: l.id,
+    name: l.nombre,
+    category: l.categoria,
+    description: l.descripcion,
+    address: l.id === "mirador" ? "Valle de Nochixtlán, Oaxaca" : "Región Mixteca Alta, Oaxaca",
+    x: l.x,
+    y: l.y
+  }));
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col min-h-screen">
+      <Hero />
+      
+      <section id="mapa" className="py-24 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-4 text-center mb-16">
+          <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Geolocalización</span>
+          <h2 className="text-4xl font-serif font-bold text-primary mb-4">Cartografía Turística</h2>
+          <div className="h-0.5 w-24 bg-accent mx-auto mb-6"></div>
+          <p className="max-w-2xl mx-auto text-slate-600 font-serif">
+            Explore los tesoros de nuestra jurisdicción. Cada marcador representa un legado histórico o una maravilla natural.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="container mx-auto px-4">
+          <InteractiveMap locations={mapLocations} />
         </div>
-      </main>
+      </section>
+
+      <TesorosRegionales />
+
+      <section className="py-20 bg-[#EFECE6] border-t border-slate-300">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-2xl font-serif font-bold text-primary mb-6">¿Busca servicios en la ciudad?</h3>
+          <p className="text-slate-600 font-serif mb-8 max-w-xl mx-auto leading-relaxed">
+            Consulte nuestro directorio oficial para ubicar establecimientos comerciales, gastronomía local y opciones de hospedaje.
+          </p>
+          <Link href="/directorio">
+            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-serif uppercase tracking-widest px-10 py-8 shadow-md">
+              Explorar Directorio
+            </Button>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
