@@ -1,18 +1,64 @@
 {
   "negocios": [
     {
-      "id": "mercado-municipal",
-      "nombre": "Mercado Municipal de Nochixtlán",
-      "categoria": "Gastronomía",
-      "descripcion": "Punto de encuentro para degustar la barbacoa de borrego y adquirir productos de la región.",
-      "direccion": "Calle Porfirio Díaz, Centro."
+      "id": "hotel-kristal",
+      "nombre": "HOTEL Kristal",
+      "categoria": "Hospedaje",
+      "descripcion": "Reconocido hotel con habitaciones cómodas que ofrecen vistas a la ciudad y una ubicación extraordinaria a unas cuadras del centro.",
+      "direccion": "José María Morelos 11, 2do piso, Centro, 69600 Asunción Nochixtlán, Oax.",
+      "atractivos": ["Ubicación céntrica", "Vistas panorámicas", "Servicio excepcional", "Wi-Fi gratuito"],
+      "horarios": "Recepción 24 horas",
+      "imagen": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200"
     },
     {
-      "id": "hotel-central",
-      "nombre": "Hotel Nochixtlán",
+      "id": "hotel-fandangos",
+      "nombre": "Hotel Fandangos",
       "categoria": "Hospedaje",
-      "descripcion": "Servicio de alojamiento profesional en el centro del municipio.",
-      "direccion": "Avenida Libertad."
+      "descripcion": "Acogedor hotel de 3 estrellas con restaurante integrado, ideal para disfrutar de una estancia cómoda con todos los servicios básicos.",
+      "direccion": "Roble 11, Fraccionamiento María, 69600 Asunción Nochixtlán, Oax.",
+      "atractivos": ["Restaurante propio", "Estacionamiento gratuito", "Wi-Fi gratis", "Ambiente tranquilo"],
+      "horarios": "Recepción 24 horas",
+      "imagen": "https://images.unsplash.com/photo-1582719478250-c8940924104a?q=80&w=1200"
+    },
+    {
+      "id": "el-patio-de-la-abuela",
+      "nombre": "El Patio de la Abuela",
+      "categoria": "Gastronomía",
+      "descripcion": "Uno de los restaurantes mejor calificados de Nochixtlán, ofreciendo auténtica comida regional y antojitos en un ambiente tradicional.",
+      "direccion": "Zona Centro, Asunción Nochixtlán, Oax.",
+      "atractivos": ["Comida tradicional oaxaqueña", "Ambiente familiar", "Excelente servicio", "Desayunos típicos"],
+      "horarios": "8:00 AM - 6:00 PM",
+      "imagen": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200"
+    },
+    {
+      "id": "caffe-latte",
+      "nombre": "Caffé Latte",
+      "categoria": "Gastronomía",
+      "descripcion": "El lugar perfecto para disfrutar de un buen café de especialidad, postres y un ambiente relajado en la ciudad.",
+      "direccion": "Zona Centro, Asunción Nochixtlán, Oax.",
+      "atractivos": ["Café de especialidad", "Postres caseros", "Bebidas frías y calientes", "Lugar céntrico"],
+      "horarios": "9:00 AM - 9:00 PM",
+      "imagen": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200"
+    },
+    {
+      "id": "gallo-cervecero",
+      "nombre": "Gallo Cervecero Sportsbar",
+      "categoria": "Entretenimiento",
+      "descripcion": "Popular bar deportivo y coctelería local, ideal para disfrutar de eventos deportivos, botanas y una gran variedad de bebidas.",
+      "direccion": "Asunción Nochixtlán, Oax.",
+      "atractivos": ["Transmisión de deportes", "Coctelería", "Cerveza artesanal y nacional", "Snacks y alitas"],
+      "horarios": "1:00 PM - 12:00 AM",
+      "imagen": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200"
+    },
+    {
+      "id": "aceros-juquilita",
+      "nombre": "Aceros y Acabados Juquilita",
+      "categoria": "Comercio",
+      "descripcion": "Distribuidor clave de acero y materiales de construcción en la región, ofreciendo soluciones para obras, herrería y metalurgia.",
+      "direccion": "Asunción Nochixtlán, Oax.",
+      "atractivos": ["Materiales de construcción", "Distribución de acero", "Ferretería especializada", "Atención a proyectos"],
+      "horarios": "8:00 AM - 6:00 PM",
+      "imagen": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200"
     }
   ]
 }
