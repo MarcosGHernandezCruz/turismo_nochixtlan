@@ -6,7 +6,6 @@ import { Send, CheckCircle, AlertTriangle } from 'lucide-react';
 export default function FormularioContacto() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  // SUSTITUYE ESTA URL CON TU ENDPOINT DE FORMSPREE
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgorlyda"; 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,9 +40,9 @@ export default function FormularioContacto() {
       <div className="bg-white p-12 border-2 border-primary text-center space-y-4 shadow-xl">
         <CheckCircle className="mx-auto text-accent" size={48} />
         <h3 className="text-2xl font-serif font-bold text-primary uppercase">¡Mensaje Enviado!</h3>
-        <p className="font-serif text-slate-600 mb-6">Hemos recibido su solicitud y la turnaremos al área correspondiente.</p>
+        <p className="font-serif text-slate-600 mb-6">Hemos recibido tu solicitud y nos pondremos en contacto pronto.</p>
         <Button onClick={() => setStatus('idle')} variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white font-serif uppercase tracking-widest text-xs">
-          Enviar otra solicitud
+          Enviar otro mensaje
         </Button>
       </div>
     );
@@ -71,21 +70,19 @@ export default function FormularioContacto() {
       </div>
       
       <div className="space-y-2">
-        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Asunto de interés</label>
+        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Asunto</label>
         <select name="asunto" className="w-full border-b-2 border-slate-200 focus:border-primary outline-none py-2 font-serif bg-transparent">
           <option>Alta de Negocio en Directorio</option>
           <option>Información Turística</option>
-          <option>Sugerencias Ciudadanas</option>
-          <option>Contacto Comercial</option>
+          <option>Contacto General</option>
         </select>
       </div>
 
       <div className="space-y-2">
         <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Mensaje o Detalles</label>
-        <textarea name="mensaje" required rows={4} className="w-full border-2 border-slate-100 focus:border-primary outline-none p-3 font-serif resize-none" placeholder="Escriba su mensaje aquí..." />
+        <textarea name="mensaje" required rows={4} className="w-full border-2 border-slate-100 focus:border-primary outline-none p-3 font-serif resize-none" placeholder="Escribe tu mensaje aquí..." />
       </div>
 
-      {/* Campo oculto opcional para Formspree: Evita respuestas automáticas vacías al usuario */}
       <input type="hidden" name="_subject" value="Nuevo contacto desde Explora Nochixtlán" />
 
       <Button 
@@ -93,7 +90,7 @@ export default function FormularioContacto() {
         disabled={status === 'loading'}
         className="w-full bg-primary hover:bg-primary/90 text-white rounded-none py-8 font-serif uppercase tracking-[0.3em] text-xs font-bold transition-all"
       >
-        {status === 'loading' ? 'Procesando Envío...' : <><Send size={16} className="mr-3" /> Enviar Solicitud Oficial</>}
+        {status === 'loading' ? 'Procesando Envío...' : <><Send size={16} className="mr-3" /> Enviar Solicitud</>}
       </Button>
     </form>
   );
