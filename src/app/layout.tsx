@@ -38,12 +38,8 @@ export default function RootLayout({
         {/* El Footer aparece en la parte inferior de todas las páginas */}
         <Footer />
         
-        {/* AQUÍ ESTÁ LA MAGIA:
-          Al colocar el Guía Virtual aquí, el botón flotante siempre estará 
-          visible en la esquina inferior derecha, sin importar en qué ruta 
-          se encuentre el usuario.
-        */}
-        <GuiaVirtual />
+        {/* Guía Virtual AI desactivado temporalmente por seguridad de API */}
+        {/* <GuiaVirtual /> */}
         
       </body>
     </html>

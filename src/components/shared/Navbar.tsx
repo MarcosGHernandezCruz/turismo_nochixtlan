@@ -18,59 +18,59 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-300 bg-[#F8F5F0]/95 backdrop-blur supports-backdrop-filter:bg-[#F8F5F0]/80">
+    <header className="sticky top-0 z-40 w-full border-b-2 border-gold bg-[#F8F5F0]/95 backdrop-blur supports-backdrop-filter:bg-[#F8F5F0]/80 shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         
         {/* Logo Institucional */}
         <Link href="/" className="flex items-center space-x-3 group" onClick={closeMenu}>
-          <div className="w-10 h-10 bg-white border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors rounded-none shadow-sm">
+          <div className="w-10 h-10 bg-[#6F1827] border-2 border-gold flex items-center justify-center text-[#BC955C] group-hover:bg-[#BC955C] group-hover:text-[#6F1827] transition-colors rounded-none shadow-sm">
             <NopalIcon className="w-6 h-6" />
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-serif font-bold text-primary tracking-tight leading-none">Explora</span>
-            <span className="text-sm font-bold text-accent tracking-widest uppercase leading-none mt-1">Nochixtlán</span>
+            <span className="text-xs font-bold text-accent tracking-[0.25em] uppercase leading-none mt-1">Nochixtlán</span>
           </div>
         </Link>
 
         {/* Navegación Desktop */}
         <nav className="hidden md:flex gap-8 items-center">
-          <Link href="/" className="text-sm font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-wider">Inicio</Link>
-          <Link href="/historia" className="text-sm font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-wider">Historia</Link>
-          <Link href="/directorio" className="text-sm font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-wider">Directorio</Link>
+          <Link href="/" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Inicio</Link>
+          <Link href="/historia" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Historia</Link>
+          <Link href="/directorio" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Directorio</Link>
         </nav>
 
         {/* Botón Desktop Alta Negocios */}
         <div className="hidden md:flex items-center gap-4">
           <Link href="/contacto">
-            <Button variant="outline" className="rounded-none border-primary text-primary hover:bg-primary/10 font-serif uppercase text-xs tracking-widest font-bold">
+            <Button variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white font-serif uppercase text-xs tracking-widest font-bold px-6 py-4 border-2 transition-all duration-200">
               Alta de Negocios
             </Button>
           </Link>
         </div>
 
         {/* Botón Menú Hamburguesa (Mobile) */}
-        <button className="md:hidden p-2 text-primary hover:bg-primary/10 active:bg-primary/20 transition-all rounded-lg min-h-12 min-w-12 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-primary/50" onClick={toggleMenu} aria-label="Menú principal" aria-expanded={isMenuOpen}>
+        <button className="md:hidden p-2 text-primary hover:bg-primary/10 active:bg-primary/20 transition-all rounded-none min-h-12 min-w-12 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-primary/50" onClick={toggleMenu} aria-label="Menú principal" aria-expanded={isMenuOpen}>
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Menú Desplegable Mobile */}
-      <div className={`md:hidden fixed top-20 left-0 right-0 w-screen bg-[#F8F5F0] border-b border-slate-300 shadow-2xl flex flex-col px-4 py-6 space-y-2 z-30 max-h-[calc(100vh-80px)] overflow-y-auto transition-all duration-200 ease-out ${
+      <div className={`md:hidden fixed top-20 left-0 right-0 w-screen bg-[#F8F5F0] border-b-2 border-gold shadow-2xl flex flex-col px-4 py-6 space-y-2 z-30 max-h-[calc(100vh-80px)] overflow-y-auto transition-all duration-200 ease-out ${
         isMenuOpen 
           ? 'opacity-100 visible translate-y-0' 
           : 'opacity-0 invisible -translate-y-2'
       }`}>
-        <Link href="/" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-lg border-b border-slate-200 mb-2">
+        <Link href="/" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-none border-b border-slate-200 mb-2">
           Inicio
         </Link>
-        <Link href="/historia" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-lg border-b border-slate-200 mb-2">
+        <Link href="/historia" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-none border-b border-slate-200 mb-2">
           Historia
         </Link>
-        <Link href="/directorio" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-lg border-b border-slate-200 mb-4">
+        <Link href="/directorio" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-none border-b border-slate-200 mb-4">
           Directorio Comercial
         </Link>
         <Link href="/contacto" onClick={closeMenu}>
-          <Button className="w-full rounded-lg bg-primary text-white font-serif uppercase tracking-widest py-3 shadow-md hover:bg-primary/90 active:scale-95 transition-all min-h-12">
+          <Button className="w-full rounded-none bg-primary text-white font-serif uppercase tracking-widest py-3 shadow-md hover:bg-accent active:scale-95 transition-all min-h-12">
             Alta de Negocios
           </Button>
         </Link>
