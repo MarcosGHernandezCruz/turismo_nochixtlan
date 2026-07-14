@@ -6,8 +6,20 @@ import { Search, MapPin, Building2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import negociosData from "@/data/negocios.json";
 
+interface Negocio {
+  id: string;
+  nombre: string;
+  categoria: string;
+  descripcion: string;
+  imagen: string;
+  telefono: string;
+  direccion: string;
+}
+
+const negocios = negociosData.negocios as Negocio[];
+
 // Extraemos categorías únicas dinámicamente (fuera del componente para evitar recálculos)
-const CATEGORIES = ["Todos", ...Array.from(new Set(negociosData.negocios.map(n => n.categoria)))];
+const CATEGORIES = ["Todos", ...Array.from(new Set(negocios.map(n => n.categoria)))];
 
 export default function DirectorioPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +28,7 @@ export default function DirectorioPage() {
   // Lógica de filtrado en tiempo real memoizada
   const filteredNegocios = useMemo(() => {
     const term = searchTerm.toLowerCase().trim();
-    return negociosData.negocios.filter(negocio => {
+    return negocios.filter(negocio => {
       const matchesSearch = !term || 
                             negocio.nombre.toLowerCase().includes(term) || 
                             negocio.descripcion.toLowerCase().includes(term);
