@@ -1,4 +1,4 @@
-import { generateText } from 'ai';
+import { streamText } from 'ai';
 import { google } from '@ai-sdk/google';
 import turismoData from '@/data/turismo.json';
 import negociosData from '@/data/negocios.json';
@@ -31,27 +31,24 @@ export async function POST(req: Request) {
       - NEGOCIOS: ${contextoNegocios}
     `;
 
-    // 2. LLAMADA A LA API
-    const result = await generateText({
+    // 2. LLAMADA A LA API CON STREAMING
+    const result = streamText({
       model: google('gemini-2.5-flash'),
       system: systemPrompt,
       messages,
       temperature: 0.3,
     });
 
-    return new Response(JSON.stringify({ text: result.text }), {
-      headers: { 'Content-Type': 'application/json' },
-      status: 200
-    });
+    return result.toTextStreamResponse();
     
   } catch (error: any) {
     // 3. CAPTURA DEL ERROR REAL
     console.error("🔥 ERROR REAL EN BACKEND:", error.message || error);
     
-    // Enviamos el error detallado al frontend para que lo leas en pantalla
+    // Enviamos el error detallado al frontend
     return new Response(
       JSON.stringify({ 
-        text: `Error de Servidor: ${error.message || "Revisa la consola de VS Code (Terminal)."}` 
+        error: `Error de Servidor: ${error.message || "Revisa la consola de VS Code (Terminal)."}` 
       }), 
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );

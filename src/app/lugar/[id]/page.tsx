@@ -2,10 +2,51 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MapPin, ArrowLeft, Navigation, Clock, Info, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import type { Metadata } from "next";
 
 // Importamos las bases de datos
 import turismoData from "@/data/turismo.json";
 import negociosData from "@/data/negocios.json";
+
+// Generar rutas estáticas en tiempo de compilación (SSG)
+export async function generateStaticParams() {
+  const todasLasOpciones = [
+    ...(turismoData.lugares || []),
+    ...(negociosData.negocios || [])
+  ];
+
+  return todasLasOpciones.map((lugar) => ({
+    id: lugar.id,
+  }));
+}
+
+// Generación de metadatos dinámicos para SEO
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ id: string }> 
+}): Promise<Metadata> {
+  const { id } = await params;
+  
+  const todasLasOpciones = [
+    ...(turismoData.lugares || []),
+    ...(negociosData.negocios || [])
+  ];
+
+  const lugar = todasLasOpciones.find((l: any) => l.id === id);
+
+  if (!lugar) {
+    return {
+      title: "Lugar no encontrado | Explora Nochixtlán",
+    };
+  }
+
+  return {
+    title: `${lugar.nombre} | Explora Nochixtlán`,
+    description: `${lugar.descripcion} Conozca su ubicación, atractivos e historia en la Mixteca Alta.`,
+  };
+}
 
 // Definimos la interfaz para TypeScript
 interface Lugar {
@@ -51,10 +92,13 @@ export default async function DetallesLugarPage({
       
       {/* Hero Visual */}
       <div className="relative h-[50vh] w-full bg-primary overflow-hidden">
-        <img 
+        <Image 
           src={lugar.imagen || "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=1200"} 
           alt={lugar.nombre}
-          className="w-full h-full object-cover opacity-70 grayscale-[0.2]"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-70 grayscale-[0.2]"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#F8F5F0] via-transparent to-black/20"></div>
         

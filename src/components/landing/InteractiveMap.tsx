@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, X, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export interface Location {
   id: string | number;
@@ -23,10 +24,12 @@ export default function InteractiveMap({ locations }: { locations: Location[] })
       
       {/* Capa Base: Imagen Cartográfica */}
       <div className="absolute inset-0 w-full h-full">
-        <img 
+        <Image 
           src="/mapa-nochixtlan.svg" 
           alt="Cartografía de Asunción Nochixtlán" 
-          className="w-full h-full object-cover opacity-80 mix-blend-multiply" 
+          fill
+          sizes="100vw"
+          className="object-cover opacity-80 mix-blend-multiply" 
         />
         <div className="absolute inset-0 bg-[#F8F5F0]/30 pointer-events-none"></div>
       </div>

@@ -2,43 +2,27 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface Mensaje {
-  role: "user" | "assistant";
-  content: string;
-}
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 
 export default function GuiaVirtual() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState<Mensaje[]>([]);
+  const { messages, sendMessage, status, error } = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+    }),
+  });
+  const isLoading = status === 'submitted' || status === 'streaming';
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const manejarEnvio = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    const nuevosMensajes = [...messages, { role: "user" as const, content: input }];
-    setMessages(nuevosMensajes);
+    const textToSend = input;
     setInput("");
-    setIsLoading(true);
-
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: nuevosMensajes }),
-      });
-
-      if (!res.ok) throw new Error("Error en la conexión");
-      const data = await res.json();
-      setMessages((prev) => [...prev, { role: "assistant", content: data.text }]);
-    } catch (error) {
-      setMessages((prev) => [...prev, { role: "assistant", content: "Disculpe, mis sistemas están temporalmente fuera de servicio." }]);
-    } finally {
-      setIsLoading(false);
-    }
+    await sendMessage({ text: textToSend });
   };
 
   // Auto-scroll al último mensaje
@@ -101,12 +85,17 @@ export default function GuiaVirtual() {
                       ? 'bg-primary text-white border-primary' 
                       : 'bg-white border-slate-200 text-slate-800'}`}
                   >
-                    {m.content}
+                    {m.parts.map((part, pIdx) => {
+                      if (part.type === 'text') {
+                        return <span key={pIdx}>{part.text}</span>;
+                      }
+                      return null;
+                    })}
                   </div>
                 </div>
               ))}
               
-              {isLoading && (
+              {isLoading && messages[messages.length - 1]?.role === 'user' && (
                 <div className="flex justify-start">
                   <div className="bg-white border border-slate-200 p-3 rounded-lg">
                     <span className="flex gap-1">
@@ -117,6 +106,15 @@ export default function GuiaVirtual() {
                   </div>
                 </div>
               )}
+
+              {error && (
+                <div className="flex justify-start">
+                  <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-lg max-w-[85%] font-serif text-sm leading-relaxed">
+                    Disculpe, mis sistemas están temporalmente fuera de servicio.
+                  </div>
+                </div>
+              )}
+              
               <div ref={chatEndRef} />
             </div>
 

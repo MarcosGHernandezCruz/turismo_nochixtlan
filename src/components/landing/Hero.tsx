@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -7,10 +8,13 @@ export default function Hero() {
     <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary">
       {/* Fondo y superposiciones */}
       <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=2000" 
+        <Image 
+          src="/Nochixtlán.jpg" 
           alt="Paisaje de Nochixtlán" 
-          className="w-full h-full object-cover opacity-40 grayscale-[0.3]"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40 grayscale-[0.3]"
         />
         <div className="absolute inset-0 bg-linear-to-t from-primary/90 via-primary/50 to-transparent"></div>
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import turismoData from "@/data/turismo.json";
@@ -17,7 +18,7 @@ export default function TesorosRegionales() {
           </h2>
           <div className="h-0.5 w-24 bg-accent mx-auto"></div>
           <p className="mt-6 text-slate-600 font-serif max-w-2xl mx-auto leading-relaxed">
-            Más allá de nuestra ciudad, la región resguarda monumentos que son patrimonio vivo y paraísos naturales que quitan el aliento.
+            Más allá de nuestra ciudad, la region resguarda monumentos que son patrimonio vivo y paraísos naturales que quitan el aliento.
           </p>
         </div>
 
@@ -32,11 +33,15 @@ export default function TesorosRegionales() {
                 {/* Bloque de Imagen */}
                 <div className="w-full md:w-1/2">
                   <div className="relative aspect-4/3 bg-slate-100 border border-slate-300 p-2 shadow-sm group">
-                    <img 
-                      src={lugar.imagen} 
-                      alt={lugar.nombre} 
-                      className="w-full h-full object-cover filter grayscale-[0.2] transition-all duration-700 group-hover:grayscale-0"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image 
+                        src={lugar.imagen} 
+                        alt={lugar.nombre} 
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover filter grayscale-[0.2] transition-all duration-700 group-hover:grayscale-0"
+                      />
+                    </div>
                     {/* Elemento decorativo de esquina */}
                     <div className={`absolute -bottom-4 ${isReversed ? '-left-4' : '-right-4'} w-24 h-24 bg-[#F8F5F0] border border-slate-200 -z-10`}></div>
                   </div>

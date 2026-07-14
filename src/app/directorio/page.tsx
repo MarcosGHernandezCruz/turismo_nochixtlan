@@ -1,24 +1,29 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, MapPin, Building2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import negociosData from "@/data/negocios.json";
+
+// Extraemos categorías únicas dinámicamente (fuera del componente para evitar recálculos)
+const CATEGORIES = ["Todos", ...Array.from(new Set(negociosData.negocios.map(n => n.categoria)))];
 
 export default function DirectorioPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("Todos");
 
-  // Extraemos categorías únicas dinámicamente
-  const categories = ["Todos", ...Array.from(new Set(negociosData.negocios.map(n => n.categoria)))];
-
-  // Lógica de filtrado en tiempo real
-  const filteredNegocios = negociosData.negocios.filter(negocio => {
-    const matchesSearch = negocio.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          negocio.descripcion.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeCategory === "Todos" || negocio.categoria === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Lógica de filtrado en tiempo real memoizada
+  const filteredNegocios = useMemo(() => {
+    const term = searchTerm.toLowerCase().trim();
+    return negociosData.negocios.filter(negocio => {
+      const matchesSearch = !term || 
+                            negocio.nombre.toLowerCase().includes(term) || 
+                            negocio.descripcion.toLowerCase().includes(term);
+      const matchesCategory = activeCategory === "Todos" || negocio.categoria === activeCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, activeCategory]);
 
   return (
     <div className="min-h-screen bg-[#F8F5F0] pb-24">
@@ -60,14 +65,14 @@ export default function DirectorioPage() {
               value={activeCategory}
               onChange={(e) => setActiveCategory(e.target.value)}
             >
-              {categories.map(cat => (
+              {CATEGORIES.map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
               ))}
             </select>
 
             {/* Píldoras de Categorías (Desktop) */}
             <div className="hidden md:flex gap-2 overflow-x-auto pb-2 md:pb-0 items-center">
-              {categories.map(cat => (
+              {CATEGORIES.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
@@ -91,10 +96,12 @@ export default function DirectorioPage() {
                 
                 {/* Imagen del Negocio */}
                 <div className="relative h-48 overflow-hidden bg-slate-100">
-                  <img 
+                  <Image 
                     src={negocio.imagen} 
                     alt={negocio.nombre} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent border border-slate-200 shadow-sm">
                     {negocio.categoria}

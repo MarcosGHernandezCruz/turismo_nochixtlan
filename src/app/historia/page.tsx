@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Droplet, Flag, Shield, Users } from "lucide-react";
+import Image from "next/image";
 
 export default function HistoriaPage() {
   return (
@@ -157,11 +158,13 @@ export default function HistoriaPage() {
             {/* Abraham Castellanos */}
             <div className="flex flex-col md:flex-row gap-6 bg-white p-8 border border-slate-200 rounded-none shadow-sm">
               <div className="md:w-1/3 flex-shrink-0">
-                <div className="aspect-[3/4] bg-slate-100 border-2 border-primary p-1 rounded-none overflow-hidden">
-                  <img 
+                <div className="aspect-[3/4] bg-slate-100 border-2 border-primary p-1 rounded-none overflow-hidden relative">
+                  <Image 
                     src="https://images.unsplash.com/photo-1550565118-3a14e8d0386f?q=80&w=400" 
                     alt="Abraham Castellanos"
-                    className="w-full h-full object-cover filter grayscale sepia"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover filter grayscale sepia"
                   />
                 </div>
               </div>
@@ -177,11 +180,13 @@ export default function HistoriaPage() {
             {/* Daniel C. Pineda */}
             <div className="flex flex-col md:flex-row gap-6 bg-white p-8 border border-slate-200 rounded-none shadow-sm">
               <div className="md:w-1/3 flex-shrink-0">
-                <div className="aspect-[3/4] bg-slate-100 border-2 border-primary p-1 rounded-none overflow-hidden">
-                  <img 
+                <div className="aspect-[3/4] bg-slate-100 border-2 border-primary p-1 rounded-none overflow-hidden relative">
+                  <Image 
                     src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=400" 
                     alt="Música Tradicional"
-                    className="w-full h-full object-cover filter grayscale sepia"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover filter grayscale sepia"
                   />
                 </div>
               </div>
