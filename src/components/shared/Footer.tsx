@@ -28,14 +28,15 @@ export default function Footer() {
           <span>Desarrollado por</span>
           <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1 border border-white/10">
             <Code2 size={12} className="text-gold" />
-            <span className="font-bold text-white">VIKOTECH Solutions</span>
+            <span className="font-bold text-white">Marcos Gael Hernández</span>
           </div>
+          <span className="text-xs text-slate-500">• Ing. de AI & ML</span>
         </div>
 
       </div>
 
       <div className="container mx-auto px-4 mt-6 pt-4 border-t border-slate-800 text-center text-xs text-slate-500 font-serif">
-        <p>&copy; {new Date().getFullYear()} VIKOTECH Solutions. Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Marcos Gael Hernández. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
