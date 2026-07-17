@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 mt-6 pt-4 border-t border-slate-800 text-center text-xs text-slate-500 font-serif">
-        <p>&copy; {new Date().getFullYear()} Marcos Gael Hernández. Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} VIKOTECH Solutions</p>
       </div>
     </footer>
   );

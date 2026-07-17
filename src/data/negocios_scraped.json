@@ -1,0 +1,76 @@
+{
+  "negocios": [
+    {
+      "id": "hotel-kristal",
+      "nombre": "Hotel Kristal Nochixtlán",
+      "categoria": "Hospedaje",
+      "descripcion": "Establecimiento tradicional y confortable ideal para viajes de negocios o familiares. Ofrece amplias habitaciones, servicio de WiFi gratuito, estacionamiento privado y atención personalizada a pasos del centro histórico.",
+      "imagen": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Centro Histórico, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "hotel-fandangos",
+      "nombre": "Hotel Fandangos",
+      "categoria": "Hospedaje",
+      "descripcion": "Hotel de tres estrellas con servicios completos para el turismo. Cuenta con restaurante de comida típica, habitaciones ejecutivas, e instalaciones cómodas para una estancia placentera.",
+      "imagen": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Carretera Internacional, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "barbacoa-leilani",
+      "nombre": "Barbacoa Leilani",
+      "categoria": "Gastronomía",
+      "descripcion": "Famoso restaurante especializado en la tradicional barbacoa de borrego mixteca cocida en horno de piso. Se sirve con consomé caliente y quesadillas hechas con tortillas de maíz elaboradas a mano al momento.",
+      "imagen": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Carretera Internacional, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "barbacoa-betys",
+      "nombre": "Barbacoa Bety's",
+      "categoria": "Gastronomía",
+      "descripcion": "Punto de encuentro clásico los fines de semana para degustar la auténtica barbacoa de borrego mixteca recién salida del horno de tierra. Se recomienda acudir temprano para probar la deliciosa masita y consomé.",
+      "imagen": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Calle Aldama, Centro, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "cafe-santa-fe",
+      "nombre": "Café Santa Fe",
+      "categoria": "Gastronomía",
+      "descripcion": "Cafetería y espacio de desayunos muy popular en la comunidad. Sirve café oaxaqueño de altura, pan dulce artesanal y una variedad de platillos mexicanos en un ambiente cálido e ideal para charlas de negocios.",
+      "imagen": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "pasteleria-rey-david",
+      "nombre": "Pastelería y Cafetería Rey David",
+      "categoria": "Gastronomía",
+      "descripcion": "Local acogedor sobre la Carretera Internacional que fusiona repostería fina, sándwiches artesanales, postres tradicionales y opciones variadas de café para locales y viajeros.",
+      "imagen": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Carretera Internacional, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "chocolate-el-progreso",
+      "nombre": "Molinos y Chocolatería El Progreso",
+      "categoria": "Gastronomía",
+      "descripcion": "Establecimiento tradicional dedicado a la molienda artesanal de cacao. Disfruta de la preparación tradicional de chocolate de agua o leche o llévate a casa tabletas con la receta mixteca original.",
+      "imagen": "https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "posada-dominicos",
+      "nombre": "Posada los Dominicos",
+      "categoria": "Hospedaje",
+      "descripcion": "Hospedaje tradicional de estilo rústico y acogedor, ubicado estratégicamente para viajeros que realizan la Ruta Dominicana y buscan descansar con comodidad y calidez local.",
+      "imagen": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=600",
+      "telefono": "951 113 0366",
+      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
+    }
+  ]
+}
