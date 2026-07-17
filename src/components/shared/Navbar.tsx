@@ -36,6 +36,7 @@ export default function Navbar() {
         <nav className="hidden md:flex gap-8 items-center">
           <Link href="/" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Inicio</Link>
           <Link href="/historia" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Historia</Link>
+          <Link href="/festividad" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Fiesta Patronal</Link>
           <Link href="/directorio" className="text-xs font-serif font-bold text-slate-700 hover:text-primary transition-colors uppercase tracking-widest py-2 border-b-2 border-transparent hover:border-gold">Directorio</Link>
         </nav>
 
@@ -65,6 +66,9 @@ export default function Navbar() {
         </Link>
         <Link href="/historia" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-none border-b border-slate-200 mb-2">
           Historia
+        </Link>
+        <Link href="/festividad" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-none border-b border-slate-200 mb-2">
+          Fiesta Patronal
         </Link>
         <Link href="/directorio" onClick={closeMenu} className="text-lg font-serif font-bold text-primary uppercase tracking-wider px-4 py-3 min-h-12 flex items-center hover:bg-primary/5 active:bg-primary/10 transition-colors rounded-none border-b border-slate-200 mb-4">
           Directorio Comercial

@@ -1,0 +1,252 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar, Clock, MapPin, Music, HelpCircle } from "lucide-react";
+import Image from "next/image";
+
+const diasFestividad = [
+  {
+    key: "visperas",
+    date: "12 Ago",
+    label: "Apertura y Vísperas",
+    title: "Inicio de la Fiesta Patronal",
+    description: "La comunidad se reúne para dar inicio formal a las festividades de la Virgen de la Asunción.",
+    events: [
+      {
+        time: "10:00 AM",
+        title: "Feria Gastronómica y Artesanal",
+        location: "Explanada Municipal",
+        desc: "Inauguración de la feria con platillos típicos como mole mixteco, barbacoa de borrego, masita, tortillas de trigo y artesanías tradicionales de la región."
+      },
+      {
+        time: "06:00 PM",
+        title: "Solemne Bajada de la Virgen",
+        location: "Templo de Santo Domingo de Guzmán",
+        desc: "Ceremonia religiosa tradicional y solemne descenso de la sagrada imagen de la Virgen de la Asunción de su nicho principal."
+      }
+    ]
+  },
+  {
+    key: "calenda",
+    date: "13 Ago",
+    label: "Gran Calenda",
+    title: "La Calenda más grande del Estado",
+    description: "El hito cultural y turístico más importante de Nochixtlán, lleno de colorido, música y devoción.",
+    events: [
+      {
+        time: "04:00 PM",
+        title: "La Gran Calenda Monumental",
+        location: "Principales calles de la ciudad",
+        desc: "Desfile masivo con monos de calenda gigantes, marmotas tradicionales, canastas de flores y la participación de bandas de música de viento y miles de feligreses."
+      },
+      {
+        time: "09:00 PM",
+        title: "Quema de Toritos y Pirotecnia",
+        location: "Atrio del Templo",
+        desc: "Muestra de fuegos pirotécnicos tradicionales acompañados de sones locales interpretados por la banda de música filarmónica."
+      }
+    ]
+  },
+  {
+    key: "guelaguetza",
+    date: "14 Ago",
+    label: "Guelaguetza",
+    title: "Guelaguetza Nochixtleca",
+    description: "Intercambio cultural y dancístico de las regiones de Oaxaca compartiendo su herencia.",
+    events: [
+      {
+        time: "05:00 PM",
+        title: "Magna Guelaguetza",
+        location: "Plaza de la Constitución (Explanada)",
+        desc: "Presentación especial de las delegaciones oficiales invitadas, interpretando bailes tradicionales como Flor de Piña, Jarabe Mixteco y Danza de la Pluma."
+      }
+    ]
+  },
+  {
+    key: "principal",
+    date: "15 Ago",
+    label: "Día Mayor",
+    title: "Día de la Virgen de la Asunción",
+    description: "La culminación devocional y el festejo popular principal de nuestra fiesta patronal.",
+    events: [
+      {
+        time: "05:00 AM",
+        title: "Mañanitas Solemnes",
+        location: "Templo de Santo Domingo",
+        desc: "Las tradicionales mañanitas interpretadas por bandas locales y mariachi en honor a la Virgen de la Asunción."
+      },
+      {
+        time: "12:00 PM",
+        title: "Misa de Función Concelebrada",
+        location: "Templo de Santo Domingo",
+        desc: "Celebración eucarística principal presidida por el obispo y sacerdotes de la diócesis, con la asistencia de cofradías."
+      },
+      {
+        time: "09:00 PM",
+        title: "Gran Baile de Gala de la Feria",
+        location: "Explanada de la Feria (Deportivo)",
+        desc: "Baile masivo popular con la presentación estelar de VAGÓN CHICANO interpretando todos sus éxitos románticos y norteños, alternando con bandas tradicionales."
+      }
+    ]
+  },
+  {
+    key: "jaripeo",
+    date: "16-19 Ago",
+    label: "Clausura y Jaripeos",
+    title: "Jaripeos y Deporte Tradicional",
+    description: "Cierre de la feria con actividades de destreza ecuestre, jaripeos rancheros y convivencia familiar.",
+    events: [
+      {
+        time: "03:00 PM",
+        title: "Monumental Jaripeo Ranchero",
+        location: "Lienzo Charro Municipal",
+        desc: "Montas de toros de ganaderías prestigiadas de la región Mixteca y espectáculos ecuestres tradicionales."
+      },
+      {
+        time: "10:00 PM",
+        title: "Quema de Castillo y Clausura",
+        location: "Plaza Central",
+        desc: "Impresionante espectáculo de castillo de luces pirotécnicas para clausurar las fiestas de agosto de la Puerta de la Mixteca."
+      }
+    ]
+  }
+];
+
+export default function FestividadPage() {
+  const [activeTab, setActiveTab] = useState("calenda");
+  const activeDia = diasFestividad.find(d => d.key === activeTab) || diasFestividad[1];
+
+  return (
+    <div className="flex flex-col min-h-screen bg-[#F8F5F0]">
+      
+      {/* Hero de la Festividad */}
+      <section className="relative w-full bg-[#EFECE6] border-b-2 border-gold py-24 overflow-hidden">
+        <div className="container mx-auto px-4 text-center z-10 relative">
+          <span className="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-6 block">
+            Nuestras Tradiciones
+          </span>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary mb-8 leading-tight">
+            Festividad de Agosto Nochixtlán
+          </h1>
+          <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto font-serif leading-relaxed">
+            Acompáñanos a vivir la máxima fiesta en honor a la Virgen de la Asunción. Disfruta de la calenda más grande de Oaxaca, bailes populares, jaripeos y nuestra gastronomía mixteca única.
+          </p>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none text-primary">
+          <Music size={500} />
+        </div>
+      </section>
+
+      {/* Navegación de los Días */}
+      <section className="py-16 container mx-auto px-4 max-w-5xl">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16 border-b border-slate-200 pb-6">
+          {diasFestividad.map((dia) => {
+            const isActive = dia.key === activeTab;
+            return (
+              <button
+                key={dia.key}
+                onClick={() => setActiveTab(dia.key)}
+                className={`px-4 py-3 md:px-6 md:py-4 text-sm font-serif font-bold uppercase tracking-wider border-2 transition-all duration-300 rounded-none shadow-sm cursor-pointer
+                  ${isActive 
+                    ? 'bg-primary border-gold text-gold scale-105' 
+                    : 'bg-white border-slate-300 text-slate-500 hover:border-gold hover:text-primary'}`}
+              >
+                <span className="block text-xs text-accent font-sans font-bold tracking-widest">{dia.date}</span>
+                <span className="mt-1 block">{dia.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Detalles del día seleccionado */}
+        <div className="min-h-[450px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeDia.key}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-10"
+            >
+              {/* Encabezado del Día */}
+              <div className="bg-white border-2 border-gold p-8 md:p-12 shadow-md">
+                <span className="text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-3 py-1 inline-block mb-4">
+                  {activeDia.date} - Programa Oficial
+                </span>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                  {activeDia.title}
+                </h2>
+                <div className="h-0.5 w-16 bg-gold mb-6"></div>
+                <p className="text-slate-600 font-serif text-lg leading-relaxed max-w-3xl">
+                  {activeDia.description}
+                </p>
+              </div>
+
+              {/* Eventos del Día */}
+              <div className="space-y-6">
+                <h3 className="text-lg font-serif font-bold text-slate-700 uppercase tracking-widest mb-4 flex items-center gap-2">
+                  <Calendar size={18} className="text-gold" /> Cronograma de Actividades
+                </h3>
+                
+                {activeDia.events.map((event, idx) => (
+                  <div 
+                    key={idx} 
+                    className="bg-white border border-slate-200 p-6 md:p-8 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-none relative overflow-hidden"
+                  >
+                    {event.title.includes("VAGÓN CHICANO") && (
+                      <div className="absolute top-0 right-0 bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rotate-0">
+                        ¡Evento Estelar!
+                      </div>
+                    )}
+                    
+                    {/* Hora */}
+                    <div className="md:w-1/4 flex items-center gap-2 text-primary font-bold font-serif shrink-0">
+                      <Clock size={16} className="text-accent" />
+                      <span className="text-lg tracking-wider">{event.time}</span>
+                    </div>
+                    
+                    {/* Detalles */}
+                    <div className="md:w-3/4 space-y-3">
+                      <h4 className={`text-xl font-serif font-bold ${event.title.includes("VAGÓN CHICANO") ? 'text-accent' : 'text-primary'}`}>
+                        {event.title}
+                      </h4>
+                      <div className="flex items-center gap-2 text-xs text-slate-500 font-serif">
+                        <MapPin size={14} className="text-gold" />
+                        <span>{event.location}</span>
+                      </div>
+                      <p className="text-slate-600 font-serif text-sm leading-relaxed pt-1">
+                        {event.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+      </section>
+
+      {/* Banner de Invitación o Nota */}
+      <section className="bg-[#EFECE6] border-t border-slate-300 py-16">
+        <div className="container mx-auto px-4 max-w-3xl text-center space-y-6">
+          <HelpCircle size={36} className="mx-auto text-gold" />
+          <h3 className="text-2xl font-serif font-bold text-primary">¿Quieres conocer más detalles del programa?</h3>
+          <p className="text-slate-600 font-serif leading-relaxed">
+            Este programa es preliminar y se actualiza gradualmente. Si eres organizador, artesano o tienes alguna participación en la calenda de este año y deseas publicarla, comunícate con nosotros.
+          </p>
+          <div className="pt-2">
+            <a href="https://wa.me/529511130366?text=Hola!%20Tengo%20informacion%20o%20dudas%20sobre%20el%20programa%20de%20la%20Festividad%20de%20Agosto." target="_blank" rel="noopener noreferrer">
+              <button className="bg-primary hover:bg-accent text-white px-8 py-4 font-serif font-bold uppercase tracking-wider text-xs border-2 border-gold shadow-md transition-all">
+                Enviar Información por WhatsApp
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}

@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 text-center mt-16">
         <span className="text-accent font-bold tracking-[0.4em] uppercase text-sm md:text-base mb-6 block drop-shadow-md">
-          Bienvenidos a la Mixteca Alta
+          Bienvenidos a la puerta de la mixteca
         </span>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-lg">
           La Tierra de la <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-linear-to-r from-[#F8F5F0] to-accent">grana o cochinilla</span>
