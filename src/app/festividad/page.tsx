@@ -10,55 +10,49 @@ const diasFestividad = [
     date: "12 Ago",
     label: "Apertura y Vísperas",
     title: "Inicio de la Fiesta Patronal",
-    description: "La comunidad se reúne para dar inicio formal a las festividades de la Virgen de la Asunción.",
+    description: "La comunidad se reúne para dar inicio formal a las festividades de la Virgen de la Asunción con devoción y fervor.",
     events: [
       {
         time: "10:00 AM",
         title: "Feria Gastronómica y Artesanal",
         location: "Explanada Municipal",
-        desc: "Inauguración de la feria con platillos típicos como mole mixteco, barbacoa de borrego, masita, tortillas de trigo y artesanías tradicionales de la región."
+        desc: "Inauguración oficial de la exposición de mole mixteco, barbacoa de borrego, tortillas de trigo, casquitos y textiles tradicionales de la Mixteca Alta."
       },
       {
         time: "06:00 PM",
         title: "Solemne Bajada de la Virgen",
         location: "Templo de Santo Domingo de Guzmán",
-        desc: "Ceremonia religiosa tradicional y solemne descenso de la sagrada imagen de la Virgen de la Asunción de su nicho principal."
+        desc: "Tradicional bajada de la sagrada imagen de la Virgen de la Asunción de su nicho principal para la veneración de los feligreses."
       }
     ]
   },
   {
-    key: "calenda",
+    key: "luces",
     date: "13 Ago",
-    label: "Gran Calenda",
-    title: "La Calenda más grande del Estado",
-    description: "El hito cultural y turístico más importante de Nochixtlán, lleno de colorido, música y devoción.",
+    label: "Calenda de Luces",
+    title: "Solemne Calenda de Luces",
+    description: "Recorrido nocturno que ilumina el alma y las calles de Nochixtlán con devoción mariana.",
+    events: [
+      {
+        time: "08:00 PM",
+        title: "La Espectacular Calenda de Luces",
+        location: "Principales calles de la ciudad",
+        desc: "Desfile nocturno decorado con cientos de faroles tradicionales de celofán iluminados, estructuras flotantes de luz, pirotecnia fría y el sonar de las bandas de viento locales."
+      }
+    ]
+  },
+  {
+    key: "flores",
+    date: "14 Ago",
+    label: "Calenda de Flores",
+    title: "La Calenda de Flores (La más grande de Oaxaca)",
+    description: "El hito cultural y turístico más importante de Nochixtlán. Un derroche de fe, flores y trajes de gala mixtecos.",
     events: [
       {
         time: "04:00 PM",
-        title: "La Gran Calenda Monumental",
-        location: "Principales calles de la ciudad",
-        desc: "Desfile masivo con monos de calenda gigantes, marmotas tradicionales, canastas de flores y la participación de bandas de música de viento y miles de feligreses."
-      },
-      {
-        time: "09:00 PM",
-        title: "Quema de Toritos y Pirotecnia",
-        location: "Atrio del Templo",
-        desc: "Muestra de fuegos pirotécnicos tradicionales acompañados de sones locales interpretados por la banda de música filarmónica."
-      }
-    ]
-  },
-  {
-    key: "guelaguetza",
-    date: "14 Ago",
-    label: "Guelaguetza",
-    title: "Guelaguetza Nochixtleca",
-    description: "Intercambio cultural y dancístico de las regiones de Oaxaca compartiendo su herencia.",
-    events: [
-      {
-        time: "05:00 PM",
-        title: "Magna Guelaguetza",
-        location: "Plaza de la Constitución (Explanada)",
-        desc: "Presentación especial de las delegaciones oficiales invitadas, interpretando bailes tradicionales como Flor de Piña, Jarabe Mixteco y Danza de la Pluma."
+        title: "La Gran Calenda de Flores",
+        location: "Principales avenidas de la ciudad",
+        desc: "El recorrido festivo más grande de Oaxaca. Encabezado por marmotas monumentales, monos de calenda gigantes y miles de mujeres portando canastas de flores adornadas con figuras religiosas y bailando al son de la banda filarmónica."
       }
     ]
   },
@@ -67,54 +61,60 @@ const diasFestividad = [
     date: "15 Ago",
     label: "Día Mayor",
     title: "Día de la Virgen de la Asunción",
-    description: "La culminación devocional y el festejo popular principal de nuestra fiesta patronal.",
+    description: "Festividad litúrgica principal y celebración del magno baile anual de feria.",
     events: [
       {
         time: "05:00 AM",
         title: "Mañanitas Solemnes",
         location: "Templo de Santo Domingo",
-        desc: "Las tradicionales mañanitas interpretadas por bandas locales y mariachi en honor a la Virgen de la Asunción."
+        desc: "Las tradicionales mañanitas cantadas a la patrona Virgen de la Asunción acompañadas por mariachi y bandas locales."
       },
       {
         time: "12:00 PM",
         title: "Misa de Función Concelebrada",
         location: "Templo de Santo Domingo",
-        desc: "Celebración eucarística principal presidida por el obispo y sacerdotes de la diócesis, con la asistencia de cofradías."
+        desc: "Celebración eucarística principal de la fiesta patronal concelebrada por obispos y sacerdotes invitados de toda la región."
       },
       {
         time: "09:00 PM",
         title: "Gran Baile de Gala de la Feria",
-        location: "Explanada de la Feria (Deportivo)",
-        desc: "Baile masivo popular con la presentación estelar de VAGÓN CHICANO interpretando todos sus éxitos románticos y norteños, alternando con bandas tradicionales."
+        location: "Explanada del Deportivo Municipal",
+        desc: "El evento de baile más esperado del año. Presentación estelar de VAGÓN CHICANO interpretando sus éxitos norteños e inolvidables baladas, alternando con grupos locales."
       }
     ]
   },
   {
-    key: "jaripeo",
+    key: "clausura",
     date: "16-19 Ago",
-    label: "Clausura y Jaripeos",
-    title: "Jaripeos y Deporte Tradicional",
-    description: "Cierre de la feria con actividades de destreza ecuestre, jaripeos rancheros y convivencia familiar.",
+    label: "Guelaguetza y Clausura",
+    title: "Guelaguetza, Jaripeos y Cierre de Fiesta",
+    description: "Últimos días de festividades con gran derroche cultural mixteco y diversión familiar.",
     events: [
       {
-        time: "03:00 PM",
-        title: "Monumental Jaripeo Ranchero",
-        location: "Lienzo Charro Municipal",
-        desc: "Montas de toros de ganaderías prestigiadas de la región Mixteca y espectáculos ecuestres tradicionales."
+        time: "16 Ago - 05:00 PM",
+        title: "Magna Guelaguetza Nochixtleca",
+        location: "Plaza de la Constitución",
+        desc: "Muestra de danzas oaxaqueñas tradicionales y el tradicional regalo de la Guelaguetza por parte de las delegaciones culturales mixtecas y estatales."
       },
       {
-        time: "10:00 PM",
-        title: "Quema de Castillo y Clausura",
-        location: "Plaza Central",
-        desc: "Impresionante espectáculo de castillo de luces pirotécnicas para clausurar las fiestas de agosto de la Puerta de la Mixteca."
+        time: "17 Ago - 03:00 PM",
+        title: "Jaripeo Ranchero Tradicional",
+        location: "Lienzo Charro Municipal",
+        desc: "Destreza charra, montas de toros de ganaderías mixtecas destacadas y música de banda de viento en vivo."
+      },
+      {
+        time: "19 Ago - 10:00 PM",
+        title: "Quema de Castillo Monumental y Clausura",
+        location: "Plaza de la Constitución",
+        desc: "Impresionante espectáculo de luces y fuegos artificiales de castillo tradicional para despedir oficialmente la gran fiesta patronal."
       }
     ]
   }
 ];
 
 export default function FestividadPage() {
-  const [activeTab, setActiveTab] = useState("calenda");
-  const activeDia = diasFestividad.find(d => d.key === activeTab) || diasFestividad[1];
+  const [activeTab, setActiveTab] = useState("flores");
+  const activeDia = diasFestividad.find(d => d.key === activeTab) || diasFestividad[2];
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8F5F0]">
@@ -129,7 +129,7 @@ export default function FestividadPage() {
             Festividad de Agosto Nochixtlán
           </h1>
           <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto font-serif leading-relaxed">
-            Acompáñanos a vivir la máxima fiesta en honor a la Virgen de la Asunción. Disfruta de la calenda más grande de Oaxaca, bailes populares, jaripeos y nuestra gastronomía mixteca única.
+            Acompáñanos a vivir la máxima fiesta en honor a la Virgen de la Asunción. Disfruta de la calenda más grande de Oaxaca, la solemne calenda de luces, bailes populares y la Guelaguetza.
           </p>
         </div>
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none text-primary">
@@ -239,7 +239,7 @@ export default function FestividadPage() {
           </p>
           <div className="pt-2">
             <a href="https://wa.me/529511130366?text=Hola!%20Tengo%20informacion%20o%20dudas%20sobre%20el%20programa%20de%20la%20Festividad%20de%20Agosto." target="_blank" rel="noopener noreferrer">
-              <button className="bg-primary hover:bg-accent text-white px-8 py-4 font-serif font-bold uppercase tracking-wider text-xs border-2 border-gold shadow-md transition-all">
+              <button className="bg-primary hover:bg-accent text-white px-8 py-4 font-serif font-bold uppercase tracking-wider text-xs border-2 border-gold shadow-md transition-all cursor-pointer">
                 Enviar Información por WhatsApp
               </button>
             </a>
