@@ -27,32 +27,38 @@ const diasFestividad = [
     ]
   },
   {
-    key: "luces",
+    key: "cultural",
     date: "13 Ago",
-    label: "Calenda de Luces",
-    title: "Solemne Calenda de Luces",
-    description: "Recorrido nocturno que ilumina el alma y las calles de Nochixtlán con devoción mariana.",
+    label: "Calenda Infantil",
+    title: "Encuentro Cultural y Convite Infantil",
+    description: "Actividades culturales de preparación y el tradicional convite infantil por las calles céntricas.",
     events: [
       {
-        time: "08:00 PM",
-        title: "La Espectacular Calenda de Luces",
-        location: "Principales calles de la ciudad",
-        desc: "Desfile nocturno decorado con cientos de faroles tradicionales de celofán iluminados, estructuras flotantes de luz, pirotecnia fría y el sonar de las bandas de viento locales."
+        time: "05:00 PM",
+        title: "Calenda Infantil y Comparsa de Mascaritas",
+        location: "Centro de la Ciudad",
+        desc: "Convite infantil con la participación de niños de los barrios locales portando faroles pequeños, acompañados de la comparsa tradicional de mascaritas bailando al son del violín."
       }
     ]
   },
   {
-    key: "flores",
+    key: "calendas",
     date: "14 Ago",
-    label: "Calenda de Flores",
-    title: "La Calenda de Flores (La más grande de Oaxaca)",
-    description: "El hito cultural y turístico más importante de Nochixtlán. Un derroche de fe, flores y trajes de gala mixtecos.",
+    label: "Día de Calendas",
+    title: "Grandes Calendas (La Calenda de Flores y Luces)",
+    description: "El día más alegre y concurrido del año. Dos recorridos emblemáticos llenan de flores y luces a la Puerta de la Mixteca.",
     events: [
       {
         time: "04:00 PM",
-        title: "La Gran Calenda de Flores",
+        title: "La Monumental Calenda de Flores",
         location: "Principales avenidas de la ciudad",
-        desc: "El recorrido festivo más grande de Oaxaca. Encabezado por marmotas monumentales, monos de calenda gigantes y miles de mujeres portando canastas de flores adornadas con figuras religiosas y bailando al son de la banda filarmónica."
+        desc: "El desfile de flores más grande de Oaxaca, encabezado por marmotas monumentales, monos gigantes y mujeres portando hermosas canastas florales tradicionales mixtecas."
+      },
+      {
+        time: "08:00 PM",
+        title: "La Espectacular Calenda de Luces",
+        location: "Calles del centro y atrio del templo",
+        desc: "Impresionante desfile nocturno iluminado por faroles artesanales de celofán, carros alegóricos iluminados, carros de sonido y pirotecnia fría tradicional mixteca."
       }
     ]
   },
@@ -113,7 +119,7 @@ const diasFestividad = [
 ];
 
 export default function FestividadPage() {
-  const [activeTab, setActiveTab] = useState("flores");
+  const [activeTab, setActiveTab] = useState("calendas");
   const activeDia = diasFestividad.find(d => d.key === activeTab) || diasFestividad[2];
 
   return (

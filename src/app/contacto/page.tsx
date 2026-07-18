@@ -1,8 +1,45 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Globe, MapPin, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ContactoPage() {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    categoria: "Gastronomía",
+    direccion: "",
+    telefono: "",
+    horarios: "",
+    descripcion: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Formatear el mensaje de WhatsApp de forma legible
+    const textoMensaje = `*SOLICITUD DE ALTA - EXPLORA NOCHIXTLÁN*\n\n` +
+      `• *Nombre del Negocio:* ${formData.nombre}\n` +
+      `• *Categoría/Giro:* ${formData.categoria}\n` +
+      `• *Dirección:* ${formData.direccion}\n` +
+      `• *Teléfono:* ${formData.telefono}\n` +
+      `• *Horarios:* ${formData.horarios}\n` +
+      `• *Descripción:* ${formData.descripcion}\n\n` +
+      `_(Nota: Adjuntaré las fotografías de mi establecimiento de forma individual a continuación)_`;
+
+    const mensajeEncoded = encodeURIComponent(textoMensaje);
+    const urlWhatsApp = `https://wa.me/529511130366?text=${mensajeEncoded}`;
+    
+    window.open(urlWhatsApp, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0] pb-24">
       
@@ -21,7 +58,7 @@ export default function ContactoPage() {
             Únete al Directorio de Explora Nochixtlán
           </h1>
           <p className="text-slate-300 font-serif max-w-2xl text-lg leading-relaxed">
-            Da de alta tu establecimiento comercial, restaurante o servicio de forma rápida, directa y totalmente gratuita a través de WhatsApp o llamada telefónica.
+            Completa la ficha técnica de tu negocio en el formulario. Al finalizar, el sistema generará tu mensaje y podrás enviarlo directamente por WhatsApp junto con tus fotos.
           </p>
         </div>
       </div>
@@ -64,70 +101,116 @@ export default function ContactoPage() {
             </div>
 
             <div className="bg-[#EFECE6] border border-slate-300 p-8 rounded-none">
-              <h4 className="font-bold text-xs uppercase tracking-widest text-primary mb-3">Requisitos de Registro</h4>
-              <ul className="space-y-2 text-sm font-serif text-slate-700 list-disc pl-4">
-                <li>Nombre comercial del establecimiento.</li>
-                <li>Dirección exacta.</li>
-                <li>Horarios de atención al público.</li>
-                <li>Fotografías claras de tu local o productos (se solicitarán por WhatsApp).</li>
-              </ul>
+              <h4 className="font-bold text-xs uppercase tracking-widest text-primary mb-3">Instrucciones de Fotos</h4>
+              <p className="text-sm font-serif text-slate-700 leading-relaxed">
+                Por motivos de peso y calidad, las fotos de tu negocio no se cargan en este formulario. 
+                Una vez que envíes este formulario y se abra tu chat de WhatsApp, **envía de 1 a 3 fotos claras de tu local o productos estrella de forma individual**.
+              </p>
             </div>
           </div>
 
-          {/* Columna Principal: Guía de Registro Paso a Paso (Complemento) */}
+          {/* Columna Principal: Formulario Inteligente */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 md:p-12 border border-slate-200 shadow-xl space-y-8 rounded-none">
+            <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 border border-slate-200 shadow-xl space-y-6 rounded-none">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-primary mb-2">Guía de Alta de Negocios</h2>
-                <p className="text-slate-600 font-serif">Sigue estos sencillos pasos para que tu negocio aparezca en línea hoy mismo.</p>
+                <h2 className="text-3xl font-serif font-bold text-primary mb-2">Ficha Técnica del Negocio</h2>
+                <p className="text-slate-600 font-serif text-sm">Completa los campos a continuación para armar tu solicitud de registro.</p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="border border-slate-200 p-6 space-y-3 rounded-none">
-                  <div className="w-8 h-8 rounded-none bg-primary text-white flex items-center justify-center font-bold font-serif">1</div>
-                  <h3 className="font-serif font-bold text-lg text-primary">Prepara la Información</h3>
-                  <p className="text-slate-600 font-serif text-sm leading-relaxed">Reúne el nombre del negocio, giro, dirección, número telefónico y horarios de servicio.</p>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Nombre del Negocio</label>
+                  <input 
+                    type="text" 
+                    name="nombre" 
+                    required 
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    className="w-full border-b-2 border-slate-200 focus:border-primary outline-none py-2 font-serif text-slate-800" 
+                    placeholder="Ej. Cafetería La Asunción" 
+                  />
                 </div>
                 
-                <div className="border border-slate-200 p-6 space-y-3 rounded-none">
-                  <div className="w-8 h-8 rounded-none bg-primary text-white flex items-center justify-center font-bold font-serif">2</div>
-                  <h3 className="font-serif font-bold text-lg text-primary">Elige de 1 a 3 Fotos</h3>
-                  <p className="text-slate-600 font-serif text-sm leading-relaxed">Toma fotos claras de tu fachada, local o de tus productos/platillos estrella con buena iluminación.</p>
-                </div>
-
-                <div className="border border-slate-200 p-6 space-y-3 rounded-none">
-                  <div className="w-8 h-8 rounded-none bg-primary text-white flex items-center justify-center font-bold font-serif">3</div>
-                  <h3 className="font-serif font-bold text-lg text-primary">Envíanos un Mensaje</h3>
-                  <p className="text-slate-600 font-serif text-sm leading-relaxed">Envíanos los datos y fotos por WhatsApp al número de atención oficial.</p>
-                </div>
-
-                <div className="border border-slate-200 p-6 space-y-3 rounded-none">
-                  <div className="w-8 h-8 rounded-none bg-primary text-white flex items-center justify-center font-bold font-serif">4</div>
-                  <h3 className="font-serif font-bold text-lg text-primary">¡Publicación Lista!</h3>
-                  <p className="text-slate-600 font-serif text-sm leading-relaxed">Validamos los datos y subimos tu establecimiento al Directorio en menos de 24 horas.</p>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Categoría / Giro</label>
+                  <select 
+                    name="categoria" 
+                    value={formData.categoria}
+                    onChange={handleChange}
+                    className="w-full border-b-2 border-slate-200 focus:border-primary outline-none py-2 font-serif bg-transparent text-slate-800"
+                  >
+                    <option value="Gastronomía">Gastronomía (Café, Rest., Antojitos)</option>
+                    <option value="Hospedaje">Hospedaje (Hotel, Hostal, Posada)</option>
+                    <option value="Comercio">Comercio (Tienda, Ropa, Artesanías)</option>
+                    <option value="Servicios">Servicios (Salud, Talleres, Transporte)</option>
+                  </select>
                 </div>
               </div>
 
-              {/* Botones de acción rápida */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-100">
-                <a 
-                  href="https://wa.me/529511130366?text=Hola!%20Me%20interesa%20dar%20de%20alta%20mi%20negocio%20en%20el%20directorio%20de%20Explora%20Nochixtlan." 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Dirección Completa</label>
+                  <input 
+                    type="text" 
+                    name="direccion" 
+                    required 
+                    value={formData.direccion}
+                    onChange={handleChange}
+                    className="w-full border-b-2 border-slate-200 focus:border-primary outline-none py-2 font-serif text-slate-800" 
+                    placeholder="Calle, Número, Barrio o Colonia" 
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Teléfono de Atención</label>
+                  <input 
+                    type="tel" 
+                    name="telefono" 
+                    required 
+                    value={formData.telefono}
+                    onChange={handleChange}
+                    className="w-full border-b-2 border-slate-200 focus:border-primary outline-none py-2 font-serif text-slate-800" 
+                    placeholder="Ej. 951 123 4567" 
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Horarios de Servicio</label>
+                <input 
+                  type="text" 
+                  name="horarios" 
+                  required 
+                  value={formData.horarios}
+                  onChange={handleChange}
+                  className="w-full border-b-2 border-slate-200 focus:border-primary outline-none py-2 font-serif text-slate-800" 
+                  placeholder="Ej. Lunes a Sábado de 9:00 AM a 8:00 PM" 
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Descripción del Negocio</label>
+                <textarea 
+                  name="descripcion" 
+                  required 
+                  rows={4} 
+                  value={formData.descripcion}
+                  onChange={handleChange}
+                  className="w-full border-2 border-slate-100 focus:border-primary outline-none p-3 font-serif resize-none text-slate-800" 
+                  placeholder="Cuéntanos qué vendes o qué servicios ofreces..." 
+                />
+              </div>
+
+              {/* Botón enviar */}
+              <div className="pt-4">
+                <Button 
+                  type="submit" 
+                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-none py-8 font-serif uppercase tracking-[0.2em] text-xs font-bold shadow-md flex items-center justify-center gap-2"
                 >
-                  <Button className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-none py-8 font-serif uppercase tracking-widest text-xs font-bold shadow-md flex items-center justify-center gap-2">
-                    <MessageCircle size={16} /> Contactar por WhatsApp
-                  </Button>
-                </a>
-                
-                <a href="tel:+529511130366" className="flex-1">
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5 rounded-none py-8 font-serif uppercase tracking-widest text-xs font-bold flex items-center justify-center gap-2">
-                    <Phone size={16} /> Llamar Oficialmente
-                  </Button>
-                </a>
+                  <MessageCircle size={16} /> Enviar Registro por WhatsApp
+                </Button>
               </div>
-            </div>
+            </form>
           </div>
 
         </div>
