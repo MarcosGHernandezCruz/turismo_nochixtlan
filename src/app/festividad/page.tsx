@@ -15,121 +15,131 @@ const galeriaCalenda = [
 
 const diasFestividad = [
   {
-    key: "visperas",
+    key: "dom9",
+    date: "09 Ago",
+    label: "Apertura",
+    title: "Inauguración de la Expoferia",
+    description: "Iniciamos nuestra gran celebración con la apertura de la feria, deporte extremo y el primer encuentro de bandas.",
+    events: [
+      { time: "10:00 AM", title: "Motocross", location: "Pista atrás del recinto", desc: "" },
+      { time: "03:00 PM", title: "Expo emprendedores", location: "Recinto ferial", desc: "De 3:00 a 8:00 p.m." },
+      { time: "05:00 PM", title: "Calenda de Bandas", location: "Recinto ferial", desc: "" },
+      { time: "05:30 PM", title: "Inauguración Expoferia", location: "Recinto ferial", desc: "" },
+      { time: "06:30 PM", title: "Encuentro de Bandas y Marmoteros", location: "Recinto ferial", desc: "" },
+      { time: "09:00 PM", title: "Centenarios del Norte", location: "Recinto ferial", desc: "Presentación musical." }
+    ]
+  },
+  {
+    key: "lun10",
+    date: "10 Ago",
+    label: "Épocas",
+    title: "Tradición y Épocas Nochixtlecas",
+    description: "Una tarde dedicada a destacar nuestra vestimenta, danza y los recuerdos musicales de la región.",
+    events: [
+      { time: "03:00 PM", title: "Expo emprendedores", location: "Recinto ferial", desc: "De 3:00 a 8:00 p.m." },
+      { time: "05:00 PM", title: "Presentación del traje nochixtleco", location: "Recinto ferial", desc: "Por mujeres nochixtlecas." },
+      { time: "05:30 PM", title: "Ensamble Casa de la Cultura", location: "Recinto ferial", desc: "" },
+      { time: "06:00 PM", title: "Grupo de danza Sangre Oaxaqueña", location: "Recinto ferial", desc: "" },
+      { time: "07:30 PM", title: "Grupo Épocas", location: "Recinto ferial", desc: "Presentación musical." }
+    ]
+  },
+  {
+    key: "mar11",
+    date: "11 Ago",
+    label: "Identidad",
+    title: "Danza, Folclor y Rock",
+    description: "Reconocimiento a nuestra delegación que nos representó en la Guelaguetza y mucha más cultura.",
+    events: [
+      { time: "03:00 PM", title: "Expo emprendedores", location: "Recinto ferial", desc: "De 3:00 a 8:00 p.m." },
+      { time: "05:00 PM", title: "Muladhara Danza", location: "Recinto ferial", desc: "" },
+      { time: "06:30 PM", title: "Banda Casa de la Cultura", location: "Recinto ferial", desc: "" },
+      { time: "07:00 PM", title: "Presentación de la Delegación Nochixtleca", location: "Recinto ferial", desc: "Reconocimiento por participación en la Guelaguetza." },
+      { time: "07:30 PM", title: "Pipperyta Rock", location: "Recinto ferial", desc: "Presentación musical." }
+    ]
+  },
+  {
+    key: "mie12",
     date: "12 Ago",
-    label: "Apertura y Vísperas",
-    title: "Inicio de la Fiesta Patronal",
-    description: "La comunidad se reúne para dar inicio formal a las festividades de la Virgen de la Asunción con devoción y fervor.",
+    label: "Coronación",
+    title: "Coronación y Gran Baile de la Reina",
+    description: "El tradicional día de la reina con cabalgata matutina, coronación, comedia y el primer gran baile.",
     events: [
-      {
-        time: "10:00 AM",
-        title: "Feria Gastronómica y Artesanal",
-        location: "Explanada Municipal",
-        desc: "Inauguración oficial de la exposición de mole mixteco, barbacoa de borrego, tortillas de trigo, casquitos y textiles tradicionales de la Mixteca Alta."
-      },
-      {
-        time: "06:00 PM",
-        title: "Solemne Bajada de la Virgen",
-        location: "Templo de Santo Domingo de Guzmán",
-        desc: "Tradicional bajada de la sagrada imagen de la Virgen de la Asunción de su nicho principal para la veneración de los feligreses."
-      }
+      { time: "08:30 AM", title: "Cabalgata Tradicional", location: "Campo Los Azulejos", desc: "" },
+      { time: "03:00 PM", title: "Expo emprendedores", location: "Recinto ferial", desc: "De 3:00 a 8:00 p.m." },
+      { time: "05:30 PM", title: "Presentación de la Reina de la fiesta", location: "Recinto ferial", desc: "" },
+      { time: "06:30 PM", title: "Coronación de la Reina", location: "Recinto ferial", desc: "" },
+      { time: "07:00 PM", title: "Show de Lalo España", location: "Recinto ferial", desc: "Show cómico estelar." },
+      { time: "09:00 PM", title: "Baile de Coronación", location: "Recinto ferial", desc: "Sonido la Changa, DJ Víctor Estrella de Polymarch y Manuel La Voz Master." }
     ]
   },
   {
-    key: "cultural",
+    key: "jue13",
     date: "13 Ago",
-    label: "Calenda Infantil",
-    title: "Encuentro Cultural y Convite Infantil",
-    description: "Actividades culturales de preparación y el tradicional convite infantil por las calles céntricas.",
+    label: "Cultural",
+    title: "Danza e Identidad Romerense",
+    description: "Intercambio cultural con la Compañía Espacio Danza de Colima y representaciones folclóricas.",
     events: [
-      {
-        time: "05:00 PM",
-        title: "Calenda Infantil y Comparsa de Mascaritas",
-        location: "Centro de la Ciudad",
-        desc: "Convite infantil con la participación de niños de los barrios locales portando faroles pequeños, acompañados de la comparsa tradicional de mascaritas bailando al son del violín."
-      }
+      { time: "03:00 PM", title: "Expo emprendedores", location: "Recinto ferial", desc: "De 3:00 a 8:00 p.m." },
+      { time: "05:00 PM", title: "Casa de Cultura Ballet", location: "Recinto ferial", desc: "" },
+      { time: "06:00 PM", title: "Orgullo Romerense", location: "Recinto ferial", desc: "" },
+      { time: "06:30 PM", title: "Orgullo de mi identidad", location: "Recinto ferial", desc: "" },
+      { time: "07:00 PM", title: "Compañía espacio Danza de Colima", location: "Recinto ferial", desc: "" }
     ]
   },
   {
-    key: "calendas",
+    key: "vie14",
     date: "14 Ago",
-    label: "Día de Calendas",
-    title: "Grandes Calendas (La Calenda de Flores y Luces)",
-    description: "El día más alegre y concurrido del año. Dos recorridos emblemáticos llenan de flores y luces a la Puerta de la Mixteca.",
+    label: "Calendas",
+    title: "Día de Grandes Calendas (Flores y Luces)",
+    description: "El evento más concurrido. Dos calendas emblemáticas que llenan de flores, colores y luces a la población.",
     events: [
-      {
-        time: "04:00 PM",
-        title: "La Monumental Calenda de Flores",
-        location: "Principales avenidas de la ciudad",
-        desc: "El desfile de flores más grande de Oaxaca, encabezado por marmotas monumentales, monos gigantes y mujeres portando hermosas canastas florales tradicionales mixtecas."
-      },
-      {
-        time: "08:00 PM",
-        title: "La Espectacular Calenda de Luces",
-        location: "Calles del centro y atrio del templo",
-        desc: "Impresionante desfile nocturno iluminado por faroles artesanales de celofán, carros alegóricos iluminados, carros de sonido y pirotecnia fría tradicional mixteca."
-      }
+      { time: "02:30 PM", title: "Mega Calenda de Flores", location: "Atrio Parroquial", desc: "Inicio de la calenda más grande del estado." },
+      { time: "05:00 PM", title: "Concurso de Disfraces", location: "Explanada Municipal", desc: "" },
+      { time: "06:00 PM", title: "Brindis de Calenda", location: "Explanada Municipal", desc: "" },
+      { time: "08:30 PM", title: "Calenda de Luces", location: "Atrio Parroquial", desc: "Recorrido nocturno espectacular." },
+      { time: "09:00 PM", title: "Baile de Calenda", location: "Explanada Municipal", desc: "Proyecto Show y DJ's locales." }
     ]
   },
   {
-    key: "principal",
+    key: "sab15",
     date: "15 Ago",
     label: "Día Mayor",
-    title: "Día de la Virgen de la Asunción",
-    description: "Festividad litúrgica principal y celebración del magno baile anual de feria.",
+    title: "Día de la Virgen y Jaripeo",
+    description: "Día central litúrgico y de tradiciones extremas como el off road y el jaripeo ranchero, culminando con el Carro Show.",
     events: [
-      {
-        time: "05:00 AM",
-        title: "Mañanitas Solemnes",
-        location: "Templo de Santo Domingo",
-        desc: "Las tradicionales mañanitas cantadas a la patrona Virgen de la Asunción acompañadas por mariachi y bandas locales."
-      },
-      {
-        time: "12:00 PM",
-        title: "Misa de Función Concelebrada",
-        location: "Templo de Santo Domingo",
-        desc: "Celebración eucarística principal de la fiesta patronal concelebrada por obispos y sacerdotes invitados de toda la región."
-      },
-      {
-        time: "09:00 PM",
-        title: "Gran Baile de Gala de la Feria",
-        location: "Explanada del Deportivo Municipal",
-        desc: "El evento de baile más esperado del año. Presentación estelar de VAGÓN CHICANO interpretando sus éxitos norteños e inolvidables baladas, alternando con grupos locales."
-      }
+      { time: "00:00 AM", title: "Mañanitas a la virgen de la Asunción", location: "Templo Parroquial", desc: "" },
+      { time: "09:00 AM", title: "Feria Gastronómica", location: "Recinto ferial", desc: "Sabores con Tradiciones (De 9:00 a.m. a 5:00 p.m.)." },
+      { time: "09:00 AM", title: "Show de las escandalosas", location: "Recinto ferial", desc: "" },
+      { time: "11:00 AM", title: "Off Road Nochixtlán", location: "Parte posterior del recinto", desc: "" },
+      { time: "03:00 PM", title: "Jaripeo Ranchero: Reserve 55", location: "Campo 2", desc: "Jinetes del niño de San Miguel, Banda Estrella Dorada." },
+      { time: "09:00 PM", title: "Tradicional Castillo y Piromusical", location: "Atrio Parroquial", desc: "" },
+      { time: "09:30 PM", title: "Baile de Gala: Internacional Carro Show", location: "Explanada Municipal", desc: "Presentación estelar." }
     ]
   },
   {
-    key: "clausura",
-    date: "16-19 Ago",
-    label: "Guelaguetza y Clausura",
-    title: "Guelaguetza, Jaripeos y Cierre de Fiesta",
-    description: "Últimos días de festividades con gran derroche cultural mixteco y diversión familiar.",
+    key: "dom16",
+    date: "16 Ago",
+    label: "Clausura",
+    title: "Deportes Tradicionales y Baile Estelar",
+    description: "Cierre deportivo, la Danza de Mascaritas y el gran baile masivo de feria clausurando nuestras festividades.",
     events: [
-      {
-        time: "16 Ago - 05:00 PM",
-        title: "Magna Guelaguetza Nochixtleca",
-        location: "Plaza de la Constitución",
-        desc: "Muestra de danzas oaxaqueñas tradicionales y el tradicional regalo de la Guelaguetza por parte de las delegaciones culturales mixtecas y estatales."
-      },
-      {
-        time: "17 Ago - 03:00 PM",
-        title: "Jaripeo Ranchero Tradicional",
-        location: "Lienzo Charro Municipal",
-        desc: "Destreza charra, montas de toros de ganaderías mixtecas destacadas y música de banda de viento en vivo."
-      },
-      {
-        time: "19 Ago - 10:00 PM",
-        title: "Quema de Castillo Monumental y Clausura",
-        location: "Plaza de la Constitución",
-        desc: "Impresionante espectáculo de luces y fuegos artificiales de castillo tradicional para despedir oficialmente la gran fiesta patronal."
-      }
+      { time: "08:00 AM", title: "Arrancones Cuarto de Milla", location: "Ctra. Internacional 190", desc: "" },
+      { time: "09:00 AM", title: "Feria Gastronómica", location: "Recinto ferial", desc: "Sabores con Tradiciones (De 9:00 a.m. a 5:00 p.m.)." },
+      { time: "09:00 AM", title: "Torneo Hexagonal de Fútbol (Bolsa 150 mil)", location: "Campo 1", desc: "" },
+      { time: "10:00 AM", title: "Torneo Básquetbol (Bolsa 113 mil) / Veteranos y Femenil", location: "Cancha Bicentenario", desc: "" },
+      { time: "11:00 AM", title: "Pelota Mixteca 2a Fuerza (Nochixtlán vs. Oaxaca)", location: "Campo Pelota Mixteca", desc: "Varonil Juvenil Sub 18 (11:00 a.m.)" },
+      { time: "12:00 PM", title: "Celebración Eucarística y Procesión", location: "Atrio Parroquial", desc: "" },
+      { time: "01:00 PM", title: "Pelota Mixteca 1a Fuerza", location: "Campo Pelota Mixteca", desc: "" },
+      { time: "02:00 PM", title: "Presentación de las Mascaritas", location: "Atrio Parroquial", desc: "Tradicional danza mixteca." },
+      { time: "04:00 PM", title: "Concierto Banda de la Policía Estatal", location: "Atrio Parroquial", desc: "" },
+      { time: "09:00 PM", title: "Gran Baile de Cierre de Fiesta", location: "Campo 2 Unidad Deportiva", desc: "Presentación de Los del Roble, VAGÓN CHICANO y Capaz de Juan Gómez." }
     ]
   }
 ];
 
 export default function FestividadPage() {
-  const [activeTab, setActiveTab] = useState("calendas");
-  const activeDia = diasFestividad.find(d => d.key === activeTab) || diasFestividad[2];
+  const [activeTab, setActiveTab] = useState("vie14");
+  const activeDia = diasFestividad.find(d => d.key === activeTab) || diasFestividad[5];
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8F5F0]">
