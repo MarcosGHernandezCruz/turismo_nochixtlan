@@ -4,40 +4,35 @@
       "id": "hotel-kristal",
       "nombre": "Hotel Kristal",
       "categoria": "Hospedaje",
-      "descripcion": "Establecimiento de hospedaje tradicional y confortable en la zona centro. Ofrece habitaciones limpias, agua caliente, WiFi y atención personalizada para familias y visitantes.",
-      "telefono": "951 113 0366",
+      "descripcion": "Establecimiento tradicional y confortable ubicado en la zona centro. Ofrece habitaciones limpias, agua caliente las 24 horas, WiFi y atención personalizada para familias y visitantes.",
       "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "hotel-fandangos",
       "nombre": "Hotel Fandangos",
       "categoria": "Hospedaje",
-      "descripcion": "Hotel conveniente sobre la arteria principal de la ciudad. Cuenta con amplias habitaciones y estacionamiento para viajeros de paso y turistas.",
-      "telefono": "951 113 0366",
+      "descripcion": "Hotel accesible situado sobre la arteria principal de la población. Cuenta con amplias habitaciones y área de estacionamiento para turistas y viajeros de paso.",
       "direccion": "Carretera Internacional 190, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "hotel-leilani",
-      "nombre": "Hotel y Restaurante Leilani",
+      "nombre": "Hotel Leilani",
       "categoria": "Hospedaje",
-      "descripcion": "Alojamiento con servicio de hospedaje y restaurante en la entrada de la población. Cómodo y accesible para familias y grupos.",
-      "telefono": "951 113 0366",
+      "descripcion": "Alojamiento con servicio de hospedaje y restaurante en la entrada de la ciudad. Instalaciones cómodas y tranquilas para familias y grupos.",
       "direccion": "Carretera Internacional 190, Asunción Nochixtlán, Oaxaca"
-    },
-    {
-      "id": "posada-los-dominicos",
-      "nombre": "Posada Los Dominicos",
-      "categoria": "Hospedaje",
-      "descripcion": "Posada tradicional y tranquila ubicada a pocos minutos del templo parroquial. Opción económica para descansar durante la ruta turística.",
-      "telefono": "951 113 0366",
-      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "hotel-juquila",
       "nombre": "Hotel Juquila",
       "categoria": "Hospedaje",
-      "descripcion": "Habitaciones sencillas y confortables cerca del mercado y cuadro principal de la ciudad.",
-      "telefono": "951 113 0366",
+      "descripcion": "Habitaciones sencillas y confortables a poca distancia del cuadro principal de la ciudad y del templo parroquial.",
+      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "hotel-merli",
+      "nombre": "Hotel Merli",
+      "categoria": "Hospedaje",
+      "descripcion": "Hotel tranquilo en la zona comercial con servicios básicos de descanso y conectividad.",
       "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     },
     {
@@ -45,47 +40,62 @@
       "nombre": "Barbacoa Leilani",
       "categoria": "Gastronomía",
       "descripcion": "Especialistas en la tradicional barbacoa de borrego mixteca cocida en horno de tierra. Servida con consomé espeso y tortillas de maíz criollo.",
-      "telefono": "951 113 0366",
       "direccion": "Carretera Internacional 190, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "barbacoa-betys",
       "nombre": "Barbacoa Bety's",
       "categoria": "Gastronomía",
-      "descripcion": "Local tradicional de barbacoa mixteca, masita y consomé recién salido del horno bajo tierra los fines de semana.",
-      "telefono": "951 113 0366",
+      "descripcion": "Local tradicional de barbacoa mixteca, masita de maíz y consomé recién salido del horno bajo tierra los fines de semana.",
+      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "taqueria-los-primos",
+      "nombre": "Taquería Los Primos",
+      "categoria": "Gastronomía",
+      "descripcion": "Especialidad en tacos de pastor, carnes asadas y guisados tradicionales en un ambiente amigable con servicio vespertino y nocturno.",
+      "direccion": "Calle Cristóbal Colón, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "pasteleria-rey-david",
+      "nombre": "Pastelería y Cafetería Rey David",
+      "categoria": "Gastronomía",
+      "descripcion": "Repostería artesanal, postres tradicionales, sándwiches y variedad de opciones de cafetería para locales y visitantes.",
+      "direccion": "Carretera Internacional 190, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "cafe-santa-fe",
+      "nombre": "Café Santa Fe",
+      "categoria": "Gastronomía",
+      "descripcion": "Cafetería y espacio de desayunos sobre la vía principal. Disfrute de café oaxaqueño de altura, pan dulce y almuerzos ligeros.",
+      "direccion": "Carretera Internacional 190, Asunción Nochixtlán, Oaxaca"
+    },
+    {
+      "id": "restaurante-la-tradicion",
+      "nombre": "Restaurante La Tradición",
+      "categoria": "Gastronomía",
+      "descripcion": "Cocina típica oaxaqueña y mixteca. Destaca por sus platillos regionales como mole negro, tlayudas y cecina.",
       "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "el-gran-bufet",
       "nombre": "Restaurante El Gran Bufet",
       "categoria": "Gastronomía",
-      "descripcion": "Servicio de comida corrida, desayunos y platillos mixtecos regionales en un espacio amplio y familiar.",
-      "telefono": "951 113 0366",
+      "descripcion": "Servicio de buffet y platillos a la carta con opciones de desayuno, comida casera y pescados en un ambiente amplio.",
       "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "marisqueria-la-casona",
       "nombre": "Marisquería La Casona",
       "categoria": "Gastronomía",
-      "descripcion": "Especialidades en pescados y mariscos, cócteles de camarón y platillos marinos preparados con sazón oaxaqueño.",
-      "telefono": "951 113 0366",
-      "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
-    },
-    {
-      "id": "cafe-santa-fe",
-      "nombre": "Café Santa Fe",
-      "categoria": "Gastronomía",
-      "descripcion": "Cafetería en el cuadro principal para disfrutar de café oaxaqueño de altura, pan dulce artesanal y almuerzos ligeros.",
-      "telefono": "951 113 0366",
+      "descripcion": "Especialidades en pescados y mariscos frescos, cócteles y empanadas marinas preparadas con sazón regional.",
       "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     },
     {
       "id": "chocolate-el-progreso",
       "nombre": "Chocolatería El Progreso",
       "categoria": "Gastronomía",
-      "descripcion": "Molienda artesanal de cacao y venta de tabletas de chocolate tradicional mixteco para agua o leche.",
-      "telefono": "951 113 0366",
+      "descripcion": "Molienda artesanal de cacao y venta de tabletas de chocolate tradicional mixteco para preparar en agua o leche.",
       "direccion": "Centro, Asunción Nochixtlán, Oaxaca"
     }
   ]

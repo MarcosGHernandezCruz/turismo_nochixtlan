@@ -1,8 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Search, MapPin, Building2, ArrowRight, Hotel, Utensils, Phone } from "lucide-react";
+import { Search, MapPin, Building2, ArrowRight, Hotel, Utensils } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import negociosData from "@/data/negocios.json";
 
@@ -11,8 +10,6 @@ interface Negocio {
   nombre: string;
   categoria: string;
   descripcion: string;
-  imagen?: string;
-  telefono: string;
   direccion: string;
 }
 
@@ -67,7 +64,7 @@ export default function DirectorioPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
               <input 
                 type="text" 
-                placeholder="Buscar hotel, barbacoa, restaurante o cafetería..." 
+                placeholder="Buscar hotel, barbacoa, taquería o cafetería..." 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 border-2 border-slate-200 focus:border-primary outline-none font-serif text-slate-700 transition-colors"
@@ -113,7 +110,7 @@ export default function DirectorioPage() {
               return (
                 <div key={negocio.id} className="bg-white border-2 border-slate-200 hover:border-gold shadow-sm flex flex-col group hover:shadow-xl transition-all duration-300">
                   
-                  {/* Banner de Referencia Institucional con Ícono (Sin fotos exageradas de stock) */}
+                  {/* Banner de Referencia Institucional con Ícono */}
                   <div className="relative h-44 overflow-hidden bg-gradient-to-br from-primary via-[#5B1320] to-primary p-6 flex flex-col justify-between border-b-2 border-gold">
                     <div className="flex justify-between items-start">
                       <div className="w-12 h-12 rounded-none bg-primary/80 border border-gold flex items-center justify-center text-gold shadow-md">
@@ -136,14 +133,9 @@ export default function DirectorioPage() {
 
                   {/* Contenido de la Tarjeta */}
                   <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-start gap-2 text-xs text-slate-600 font-serif mb-3">
+                    <div className="flex items-start gap-2 text-xs text-slate-600 font-serif mb-4 pb-3 border-b border-slate-100">
                       <MapPin size={15} className="text-gold shrink-0 mt-0.5" />
                       <p className="line-clamp-2 leading-relaxed">{negocio.direccion}</p>
-                    </div>
-
-                    <div className="flex items-center gap-2 text-xs text-slate-500 font-serif mb-4 pb-3 border-b border-slate-100">
-                      <Phone size={14} className="text-accent shrink-0" />
-                      <span>Atención: {negocio.telefono}</span>
                     </div>
 
                     <p className="text-slate-600 font-serif text-sm line-clamp-3 mb-6 flex-1 leading-relaxed">
