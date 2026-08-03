@@ -91,22 +91,35 @@ export default async function DetallesLugarPage({
     <div className="min-h-screen bg-[#F8F5F0] pb-20">
       
       {/* Hero Visual */}
-      <div className="relative h-[50vh] w-full bg-primary overflow-hidden">
-        <Image 
-          src={lugar.imagen || "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=1200"} 
-          alt={lugar.nombre}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-70 grayscale-[0.2]"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-[#F8F5F0] via-transparent to-black/20"></div>
+      <div className="relative h-[40vh] md:h-[50vh] w-full bg-gradient-to-br from-primary via-[#5B1320] to-primary overflow-hidden border-b-4 border-gold flex items-center justify-center">
+        {lugar.imagen ? (
+          <>
+            <Image 
+              src={lugar.imagen} 
+              alt={lugar.nombre}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-60 grayscale-[0.2]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#F8F5F0] via-transparent to-black/30"></div>
+          </>
+        ) : (
+          <div className="text-center z-10 p-6 space-y-3">
+            <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] block">
+              {lugar.categoria} • Asunción Nochixtlán
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white max-w-3xl mx-auto">
+              {lugar.nombre}
+            </h2>
+          </div>
+        )}
         
-        <div className="absolute bottom-12 left-0 w-full">
+        <div className="absolute bottom-6 left-0 w-full z-20">
           <div className="container mx-auto px-4">
-            <Link href="/">
-              <Button variant="ghost" className="mb-6 text-white hover:bg-white/10 rounded-none bg-black/30 backdrop-blur-md border border-white/20">
-                <ArrowLeft size={16} className="mr-2" /> Volver al Explorador
+            <Link href="/directorio">
+              <Button variant="ghost" className="text-white hover:bg-white/10 rounded-none bg-black/40 backdrop-blur-md border border-white/20 font-serif text-xs uppercase tracking-wider">
+                <ArrowLeft size={16} className="mr-2" /> Volver al Directorio
               </Button>
             </Link>
           </div>
